@@ -1,12 +1,123 @@
-Gemini Voice Bot 🤖️🗣️A conversational AI voice bot that uses Google's Gemini Pro API to listen, understand, and respond with voice. Interact with a powerful language model without touching your keyboard.🎬 Demo(It's highly recommended to add a GIF or a short video demonstrating your bot in action. You can record your screen using tools like Giphy Capture or Kap.)🌟 About The ProjectGemini Voice Bot is a Python application that provides a hands-free conversational experience with Google's state-of-the-art Gemini AI. It's designed to be a simple, yet powerful, framework for creating voice-based AI assistants.The core functionality is straightforward:Listens: It actively listens for a wake word to start the conversation.Transcribes: It uses a speech recognition library to convert your spoken words into text.Thinks: It sends the transcribed text to the Gemini API.Responds: It receives the text response from Gemini and uses a text-to-speech engine to speak it back to you.✨ Built WithPythonGoogle Gemini API (google-generativeai)SpeechRecognition LibraryPyAudio (for microphone access)pyttsx3 (for text-to-speech)🚀 Getting StartedFollow these instructions to get a copy of the project up and running on your local machine.PrerequisitesBefore you begin, ensure you have the following installed:Python 3.9+A Google Gemini API KeyYou can get your free API key from Google AI Studio.InstallationClone the repository:git clone https://github.com/Mraprguild/GeminiVoiceBot.git
-cd GeminiVoiceBot
-Create a virtual environment (recommended):python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-Install the required packages:(Create a requirements.txt file with the necessary libraries if you don't have one yet. It should look something like this:)google-generativeai
-SpeechRecognition
-PyAudio
-pyttsx3
-Then, run:pip install -r requirements.txt
-Set up your API Key:It's best practice to use an environment variable to store your API key. Create a file named .env in the root of your project directory and add your key:GEMINI_API_KEY="YOUR_GEMINI_API_KEY_HERE"
-Make sure to add .env to your .gitignore file to prevent your key from being committed to GitHub!🎙️ UsageOnce the installation is complete, you can run the main script to start the bot.python main.py  # or the name of your main script
-Say the wake word (e.g., "Hey Gemini") and then ask your question. The bot will listen, process your request, and respond with voice. To end the session, you can say a shutdown command like "goodbye".⚙️ Configuration(This is an optional section. If your script allows for configuration, describe it here. Below is an example.)You can adjust the bot's behavior by modifying the config.py file (or a similar configuration section in your main script):Wake Word: Change the phrase that activates the bot.Voice/Rate/Volume: Adjust the text-to-speech voice, speaking rate, and volume.Microphone Index: If you have multiple microphones, you can specify which one to use.🤝 ContributingContributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".Fork the ProjectCreate your Feature Branch (git checkout -b feature/AmazingFeature)Commit your Changes (git commit -m 'Add some AmazingFeature')Push to the Branch (git push origin feature/AmazingFeature)Open a Pull Request📜 LicenseDistributed under the MIT License. See LICENSE for more information.🙏 AcknowledgmentsA big thank you to the creators of the libraries that made this project possible.Hat tip to anyone whose code was used as inspiration.
+# **GeminiVoiceBot** 🎙️🤖  
+
+A voice-enabled chatbot powered by **Google's Gemini AI**, allowing seamless voice interactions via terminal or supported platforms (Telegram/Discord/Slack).  
+
+![Demo](demo.gif) *(Replace with actual demo GIF link)*  
+
+## **Features** ✨  
+✅ **Voice Recognition (STT)** – Speak, and the bot understands.  
+✅ **Gemini AI Responses** – Smart, context-aware replies.  
+✅ **Text-to-Speech (TTS)** – The bot speaks back to you.  
+✅ **Multi-Platform Support** – Works on CLI, Telegram, Discord (configurable).  
+✅ **Easy Setup** – Simple installation with `pip`.  
+
+---
+
+## **Installation** ⚙️  
+
+### **Prerequisites**  
+- Python 3.8+  
+- Google Gemini API Key ([Get it here](https://ai.google.dev/))  
+- FFmpeg (for voice processing, [install guide](https://ffmpeg.org/))  
+
+### **Steps**  
+1. **Clone the repository:**  
+   ```sh
+   git clone https://github.com/Mraprguild/GeminiVoiceBot.git
+   cd GeminiVoiceBot
+   ```
+
+2. **Install dependencies:**  
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+3. **Set up your API key:**  
+   Rename `.env.example` to `.env` and add your Gemini API key:  
+   ```env
+   GEMINI_API_KEY=your_api_key_here
+   ```
+
+4. **Run the bot:**  
+   ```sh
+   python main.py
+   ```
+
+---
+
+## **Usage** 🚀  
+
+### **1. Terminal Mode**  
+Run in voice mode:  
+```sh
+python main.py --voice
+```
+- Speak when prompted, and the bot will respond via text & voice.  
+
+### **2. Telegram Bot Mode** *(Optional)*  
+1. Get a Telegram Bot Token from [@BotFather](https://t.me/BotFather).  
+2. Add it to `.env`:  
+   ```env
+   TELEGRAM_TOKEN=your_telegram_bot_token
+   ```
+3. Run:  
+   ```sh
+   python telegram_bot.py
+   ```
+
+---
+
+## **Configuration** ⚙️  
+
+Edit `config.json` to customize:  
+```json
+{
+  "voice_enabled": true,
+  "tts_engine": "gTTS",  // or "pyttsx3"
+  "language": "en",
+  "max_response_length": 200
+}
+```
+
+---
+
+## **Dependencies** 📦  
+- `google-generativeai` (Gemini AI)  
+- `speech_recognition` (Voice input)  
+- `gTTS` or `pyttsx3` (Text-to-speech)  
+- `python-dotenv` (Environment variables)  
+
+Full list in [`requirements.txt`](requirements.txt).  
+
+---
+
+## **Contributing** 🤝  
+Feel free to open **issues** or **PRs**!  
+1. Fork the repo.  
+2. Create a branch (`git checkout -b feature/awesome-feature`).  
+3. Commit changes (`git commit -m "Add feature"`).  
+4. Push (`git push origin feature/awesome-feature`).  
+5. Open a **Pull Request**.  
+
+---
+
+## **License** 📜  
+MIT License. See [LICENSE](LICENSE).  
+
+---
+
+## **Support** 💬  
+For help, open an **issue** or contact:  
+📧 Email: *your-email@example.com*  
+💬 Telegram: *@yourusername*  
+
+---
+
+**Enjoy the bot? Give it a ⭐ on GitHub!** 🎉  
+
+---  
+
+### **Demo**  
+![Terminal Demo](terminal_demo.png) *(Replace with an actual screenshot)*  
+
+*(Adjust this template based on your actual project structure.)* 🛠️
